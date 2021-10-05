@@ -6,7 +6,7 @@ int fibon(int n)
     int a = 0, b = 1, c, i;
     if( n == 0)
         return a;
-    for(i = 2; i <= n; i++)
+    for(i = 2; i <= n; i++) //loop from 2 to n 
     {
        c = a + b;
        a = b;
