@@ -1,10 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define V 5
-
-// A utility function to find the vertex with
-// minimum key value, from the set of vertices
-// not yet included in MST
 int minKey(int key[], bool mstSet[])
 {
 	// Initialize min value
@@ -16,9 +12,6 @@ int minKey(int key[], bool mstSet[])
 
 	return min_index;
 }
-
-// A utility function to print the
-// constructed MST stored in parent[]
 void printMST(int parent[], int graph[V][V])
 {
 	cout<<"Edge \tWeight\n";
@@ -26,9 +19,6 @@ void printMST(int parent[], int graph[V][V])
 		cout<<parent[i]<<" - "<<i<<" \t"<<graph[i][parent[i]]<<" \n";
 }
 
-// Function to construct and print MST for
-// a graph represented using adjacency
-// matrix representation
 void primMST(int graph[V][V])
 {
 	// Array to store constructed MST
@@ -52,8 +42,6 @@ void primMST(int graph[V][V])
 	// The MST will have V vertices
 	for (int count = 0; count < V - 1; count++)
 	{
-		// Pick the minimum key vertex from the
-		// set of vertices not yet included in MST
 		int u = minKey(key, mstSet);
 
 		mstSet[u] = true;
@@ -62,7 +50,6 @@ void primMST(int graph[V][V])
 				parent[v] = u, key[v] = graph[u][v];
 	}
 
-	// print the constructed MST
 	printMST(parent, graph);
 }
 
