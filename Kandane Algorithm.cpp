@@ -37,7 +37,8 @@ int Kandanes_algo_or_max_sum(int arr[],int n){
         curr_sum=max(arr[i]+curr_sum,arr[i]);
         max_sum=max(curr_sum,max_sum);
     }
-    return max_sum;
+    
+    return (max_sum<0)?0:max_sum;
 }
 
 int main()
